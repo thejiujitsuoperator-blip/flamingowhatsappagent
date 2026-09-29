@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gym_agent
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  agent:
+    build: .
+    depends_on:
+      - postgres
+    env_file: .env
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/gym_agent
+    volumes:
+      - ./config:/app/config:ro
+      - ./auth_state:/app/auth_state
+    restart: unless-stopped
+    # First run: `docker compose run --rm agent` to see and scan the QR code.
+
+volumes:
+  pgdata:

@@ -1,0 +1,106 @@
+{
+  "gym": {
+    "name": "Flamingo Fitness",
+    "address": "2nd Floor, 12 MG Road, Indiranagar, Bengaluru 560038",
+    "mapsUrl": "https://maps.google.com/?q=Flamingo+Fitness+Indiranagar",
+    "phone": "+91 98765 43210",
+    "email": "hello@flamingofitness.example",
+    "website": "https://flamingofitness.example"
+  },
+  "timezone": "Asia/Kolkata",
+  "currency": { "code": "INR", "symbol": "₹", "locale": "en-IN" },
+  "timings": [
+    { "days": "Monday to Saturday", "hours": "5:30 AM - 10:30 PM" },
+    { "days": "Sunday", "hours": "7:00 AM - 1:00 PM" }
+  ],
+  "holidays": "Closed on Diwali and Holi. Holiday hours are announced on WhatsApp a week in advance.",
+  "facilities": [
+    "Strength and free-weights area",
+    "Cardio zone (treadmills, bikes, rowers)",
+    "Functional training turf",
+    "Group classes: Zumba, Yoga, HIIT",
+    "Separate changing rooms with showers and lockers",
+    "Free parking for two-wheelers"
+  ],
+  "plans": [
+    {
+      "code": "monthly",
+      "name": "Monthly",
+      "price": 2500,
+      "durationMonths": 1,
+      "description": "Full gym access, billed every month.",
+      "includes": ["Gym floor access", "Group classes", "Locker"]
+    },
+    {
+      "code": "quarterly",
+      "name": "Quarterly",
+      "price": 6500,
+      "durationMonths": 3,
+      "description": "Full gym access for 3 months, paid upfront.",
+      "includes": ["Gym floor access", "Group classes", "Locker", "1 body-composition assessment"]
+    },
+    {
+      "code": "annual",
+      "name": "Annual",
+      "price": 22000,
+      "durationMonths": 12,
+      "description": "Full gym access for 12 months, paid upfront.",
+      "includes": ["Gym floor access", "Group classes", "Locker", "Quarterly assessments", "2 personal training sessions"]
+    }
+  ],
+  "joiningFee": 500,
+  "personalTraining": {
+    "available": true,
+    "details": "Certified trainers. Sessions are 60 minutes and scheduled directly with your trainer.",
+    "packages": [
+      { "name": "12 sessions", "price": 9000, "sessions": 12 },
+      { "name": "24 sessions", "price": 16000, "sessions": 24 }
+    ]
+  },
+  "trial": {
+    "available": true,
+    "price": 0,
+    "durationMinutes": 60,
+    "details": "One free trial session with a trainer walkthrough. Bring gym shoes and a water bottle.",
+    "earliestTime": "06:00",
+    "latestTime": "20:00",
+    "closedWeekdays": [0]
+  },
+  "policies": [
+    "Membership fees are non-refundable.",
+    "Memberships can be paused once per year for up to 30 days with prior notice.",
+    "Payments accepted: UPI, cash, debit/credit card at the front desk."
+  ],
+  "faqs": [
+    { "question": "Is there a ladies-only batch?", "answer": "Yes, a ladies-only Zumba batch runs Mon/Wed/Fri at 11 AM." },
+    { "question": "Do you provide diet plans?", "answer": "Basic diet guidance is included with personal training packages." }
+  ],
+  "automation": {
+    "quietHours": { "start": 21, "end": 9 },
+    "dailyJobHour": 9,
+    "maxAutomatedPerContactPerDay": 2,
+    "paymentReminders": {
+      "daysBefore": 3,
+      "overdueDays": [1, 7],
+      "templates": {
+        "before": "Hey {name}, just a heads-up that your gym membership payment of {amount} is due on {dueDate}.",
+        "due": "Hey {name}, your {amount} membership payment is due today.",
+        "overdue": "Hey {name}, your membership payment is still pending. Let us know if you've already paid and we'll update it."
+      }
+    },
+    "leadFollowUps": {
+      "enabled": true,
+      "steps": [
+        { "afterDays": 1, "message": "Hi {name}! Just checking in, do you have any other questions about {gymName}?" },
+        { "afterDays": 3, "message": "Hi {name}, would you like to book a free trial session at {gymName}? Happy to help you pick a time." },
+        { "afterDays": 7, "message": "Hi {name}, this is our last check-in. Whenever you're ready to start, just message us here. Reply STOP to opt out." }
+      ],
+      "markLostAfterDays": 7
+    }
+  },
+  "rateLimits": {
+    "inboundPerMinute": 8,
+    "outboundMinGapMs": 1200,
+    "outboundPerMinute": 30
+  }
+}

@@ -95,6 +95,10 @@ If a name matches more than one person, the tool returns the candidates and the 
 
 **Handoff.** Complaints, refunds, discounts or negotiation, "I already paid" claims, unusual financial requests, questions the knowledge base can't answer, and requests for staff all trigger `handoffToHuman`. The conversation becomes `NEEDS_HUMAN`, the AI stops replying, pending follow-ups are cancelled and the admins get an alert. If staff reply from the gym's WhatsApp phone, the chat switches to `HUMAN_ACTIVE` automatically. Send "resume AI for …" to hand it back to the AI.
 
+## Importing past WhatsApp chats
+
+[`history-importer/`](history-importer/README.md) is a separate one-time tool. It reads old chats (from WhatsApp exports or a temporary linked device), saves and qualifies the enquiries as leads in this database, and never sends anything.
+
 ## Safety measures
 
 | Requirement | Implementation |
